@@ -124,6 +124,18 @@
                             </label>
                             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" style="color: red;" />
 
+                            <!-- Terms and Conditions -->
+                            <div class="mb-3 w-full px-2 mt-8">
+                                <input type="checkbox" name="terms" id="terms" required>
+                                <label for="terms">
+                                    {{ __('I agree to the') }} 
+                                    <a href="terms-and-conditions" class="text-{{ $config[11]->config_value }}-600 font-medium" target="_blank">{{ __('Terms & Conditions') }}</a> 
+                                    {{ __('and') }} 
+                                    <a href="privacy-policy" class="text-{{ $config[11]->config_value }}-600 font-medium" target="_blank">{{ __('Privacy Policy') }}</a>
+                                    <span style="color: red;">*</span>
+                                </label>
+                            </div>
+
                             {{-- Recaptcha --}}
                             @if ($settings['recaptcha_configuration']['RECAPTCHA_ENABLE'] == 'on')
                                 <div class="mb-3 w-full px-2 mt-8">
